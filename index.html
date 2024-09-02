@@ -27,41 +27,29 @@ return "";
 </script>
 
 
-<!-- popunder temp disable
 
-  <script type="text/javascript">
-var popunderPeriod = 12;
-var popunderUrl = 'https://ngsub.surpriseanddelightgifts.com';
-/*
-Element to trigger popunder. Allowed values:
-document - every element on page that has parent <a> will trigger popunder
-a - every <a> tag on a page will trigger popunder
-classes - element classes separated by comma that will trigger popunder.
-For example: var popunderTrigger = "btn-fin,btn-last,popunder";
-*/
-var popunderTrigger = "document";
+ <!--Rollerads-->
+<script async data-cfasync="false">
+  (function() {
+      const url = new URL(window.location.href);
+      const clickID = url.searchParams.get("click_id");
+      const sourceID = url.searchParams.get("source_id");
+
+      const s = document.createElement("script");
+      s.dataset.cfasync = "false";
+      s.src = "https://sdk4push.com/f/sdk.js?z=1238026";
+      s.onload = (opts) => {
+          opts.zoneID = 1238026;
+          opts.extClickID = clickID;
+          opts.subID1 = sourceID;
+          opts.actions.onPermissionGranted = () => {};
+          opts.actions.onPermissionDenied = () => {};
+          opts.actions.onAlreadySubscribed = () => {};
+          opts.actions.onError = () => {};
+      };
+      document.head.appendChild(s);
+  })()
 </script>
-<script src="popunder.js"></script>
-
--->
-
-
- <!--propush-->
-<script>
-    var s = document.createElement('script');
-    s.src='//lemouwee.com/pfe/current/micro.tag.min.js?z=5168327'+'&sw=/sw-check-permissions-ea2cf.js';
-    s.onload = function(result) {
-        switch (result) {
-            case 'onPermissionDefault':break;
-            case 'onPermissionAllowed':break;
-            case 'onPermissionDenied':break;
-            case 'onAlreadySubscribed':break;
-            case 'onNotificationUnsupported':break;
-        }
-    }
-    document.head.appendChild(s);
-</script>
-
 
 <!-- bbr popunder -->
 
